@@ -16,7 +16,7 @@ jobs:
         env:
           API_KEY: ${{ secrets.API_KEY_1 }}
         run: |
-          sed -i "s/YOUR_API_KEY/$API_KEY/g" index.html
+          sed -i "s/'API_KEY_1'/'$API_KEY'/g" index.html
 
       - name: Commit changes
         run: |
