@@ -151,7 +151,9 @@
         let mealCount = 1;
 
         async function fetchNutritionData(query) {
-            const apiKey = 'zcgoi60WZrsFhTIHH1bBzw==sIg0bZQhKuPjMyed';
+
+        const apiKey = 'YOUR_API_KEY'; // Placeholder for GitHub Actions
+        console.log("API Key:", apiKey);
             
             const apiUrl = `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`;
             
