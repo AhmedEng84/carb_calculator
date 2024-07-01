@@ -14,9 +14,9 @@ jobs:
 
       - name: Update API keys in HTML file
         env:
-          apiKey: ${{ secrets.API_KEY_1 }}
+          API_KEY_1: ${{ secrets.API_KEY_1 }}
         run: |
-          sed -i "s/YOUR_API_KEY_1/$API_KEY_1/g" index.html
+          sed -i "s/apiKey/$API_KEY_1/g" index.html
 
 
       - name: Commit changes
