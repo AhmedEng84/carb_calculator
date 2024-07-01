@@ -1,28 +1,27 @@
-name: Update API Keys
+name: Update API Key
 
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
-  update-keys:
+  update-key:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Update API keys in HTML file
+      - name: Update API key in HTML file
         env:
-          API_KEY_1: ${{ secrets.API_KEY_1 }}
+          API_KEY: ${{ secrets.API_KEY_1 }}
         run: |
-          sed -i "s/apiKey/$API_KEY_1/g" index.html
-
+          sed -i "s/YOUR_API_KEY/$API_KEY/g" index.html
 
       - name: Commit changes
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
           git add index.html
-          git commit -m "Update API keys"
+          git commit -m "Update API key"
           git push
